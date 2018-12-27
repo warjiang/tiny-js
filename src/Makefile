@@ -8,7 +8,7 @@ TinyJS_Functions.cpp \
 TinyJS_MathFunctions.cpp
 
 OBJECTS=$(SOURCES:.cpp=.o)
-
+$(warning  $(OBJECTS))
 all: run_tests Script
 
 run_tests: run_tests.o $(OBJECTS)
@@ -16,9 +16,6 @@ run_tests: run_tests.o $(OBJECTS)
 
 Script: Script.o $(OBJECTS)
 	$(CC) $(LDFLAGS) Script.o $(OBJECTS) -o $@
-
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	rm -f run_tests Script run_tests.o Script.o $(OBJECTS)

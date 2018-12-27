@@ -1,0 +1,5 @@
+cmake_minimum_required (VERSION 2.8)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -rdynamic")
+project (tinyjs)
+SET(SOURCE_LIST ./src/TinyJS.cpp ./src/TinyJS_Functions.cpp ./src/TinyJS_MathFunctions.cpp)
+add_executable(tinyjs main.cpp ${SOURCE_LIST})
